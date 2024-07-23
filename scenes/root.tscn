@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7jv1ma3hwwa6"]
+
+[ext_resource type="Script" path="res://scripts/root.gd" id="1_x3ndb"]
+[ext_resource type="PackedScene" uid="uid://b4w6mj0c45mj8" path="res://scenes/game.tscn" id="2_st4kx"]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_x3ndb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 73.0
+offset_bottom = 55.0
+text = "0.000"
+
+[node name="Game" parent="." instance=ExtResource("2_st4kx")]

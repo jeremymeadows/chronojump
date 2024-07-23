@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhrc7tgf38xb3"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_mpjfq"]
+[ext_resource type="Texture2D" uid="uid://t342ox7aefcq" path="res://overview.svg" id="2_vf5su"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1u5w"]
+size = Vector2(80, 80)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_mpjfq")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(42, -42)
+texture = ExtResource("2_vf5su")
+region_enabled = true
+region_rect = Rect2(788, 38, 84, 84)
+
+[node name="Face" type="Sprite2D" parent="."]
+position = Vector2(42, -39)
+texture = ExtResource("2_vf5su")
+region_enabled = true
+region_rect = Rect2(25, 502.5, 59, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(42, -42)
+shape = SubResource("RectangleShape2D_c1u5w")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(42, -42)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[connection signal="freeze" from="." to="." method="_on_freeze"]
+[connection signal="rewind" from="." to="." method="_on_rewind"]
