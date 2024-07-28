@@ -1,0 +1,97 @@
+[gd_scene load_steps=11 format=3 uid="uid://bhrc7tgf38xb3"]
+
+[ext_resource type="Script" path="res://objects/player.gd" id="1_mpjfq"]
+[ext_resource type="Texture2D" uid="uid://dxp1p6grkhw6s" path="res://assets/player.png" id="2_0eejs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whj57"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djcuh"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqx87"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t43it"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aw8la"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stuet"]
+atlas = ExtResource("2_0eejs")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gcqym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whj57")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djcuh")
+}],
+"loop": true,
+"name": &"fallmove",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iqx87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t43it")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aw8la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stuet")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypmxj"]
+size = Vector2(28, 27)
+
+[node name="Player" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_mpjfq")
+
+[node name="Animation" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, -16)
+sprite_frames = SubResource("SpriteFrames_gcqym")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.241096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, -13.5)
+shape = SubResource("RectangleShape2D_ypmxj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(32, -27)
+limit_left = -96
+limit_bottom = 96
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
+[connection signal="freeze" from="." to="." method="_on_freeze"]
+[connection signal="rewind" from="." to="." method="_on_rewind"]

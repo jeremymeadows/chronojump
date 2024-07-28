@@ -1,0 +1,124 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsub7uvwd2i44"]
+
+[ext_resource type="Script" path="res://ui/next_level.gd" id="1_wq7oe"]
+[ext_resource type="Texture2D" uid="uid://cc4incp1lm1no" path="res://assets/backgrounds/green.png" id="2_moiom"]
+
+[node name="NextLevel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wq7oe")
+metadata/_edit_vertical_guides_ = [320.0]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_moiom")
+stretch_mode = 1
+
+[node name="Completed" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -100.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Level Complete!"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -52.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 12
+theme_override_font_sizes/font_size = 64
+text = "10.000s"
+horizontal_alignment = 1
+
+[node name="Record" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 12.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Your best is 10.000s"
+horizontal_alignment = 1
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -120.0
+offset_right = 49.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "NEXT LEVEL"
+
+[node name="Replay" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -76.0
+offset_right = 49.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "REPLAY LEVEL"
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 44.0
+text = "MAIN MENU"
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -44.0
+offset_right = 104.0
+offset_bottom = -8.0
+grow_vertical = 0
+text = "QUIT GAME"
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://1v6yx87pixur"]
+
+[ext_resource type="TileSet" uid="uid://ptnlqihwreds" path="res://tiles.tres" id="1_3ccec"]
+
+[node name="Gate" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_3ccec")
+format = 2
+layer_0/tile_data = PackedInt32Array(-65536, 1, 2, -131072, 1, 1, -196608, 1, 1, -262144, 1, 1, -327680, 1, 0)

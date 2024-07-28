@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://1rk243d8tld4"]
+
+[ext_resource type="Script" path="res://ui/levels.gd" id="1_a3xnq"]
+[ext_resource type="Texture2D" uid="uid://cc4incp1lm1no" path="res://assets/backgrounds/green.png" id="2_iptn1"]
+
+[node name="Levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a3xnq")
+metadata/_edit_vertical_guides_ = [320.0]
+metadata/_edit_horizontal_guides_ = [180.0]
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_iptn1")
+stretch_mode = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 44.0
+text = "MAIN MENU"
+
+[node name="Level" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -170.0
+offset_top = 80.0
+offset_right = -74.0
+offset_bottom = 116.0
+grow_horizontal = 2
+text = "LEVEL 1"
+
+[node name="Record" type="Label" parent="Level"]
+layout_mode = 0
+offset_top = 36.0
+offset_right = 96.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "10.000s"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
