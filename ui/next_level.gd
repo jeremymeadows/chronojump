@@ -13,8 +13,14 @@ func _ready() -> void:
 	else:
 		$Record.text = "Your best is %.03fs" % record
 	
+	if Global.level == Global.MAX_LEVEL:
+		$Next.queue_free()
+	
 	Global.scores[Global.level] = time
 	Global.save_game()
+	
+	if OS.get_name() == "Web":
+		$Quit.queue_free()
 
 
 func _on_next_pressed() -> void:

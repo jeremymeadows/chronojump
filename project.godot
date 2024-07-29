@@ -24,7 +24,9 @@ Global="*res://global.tscn"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/initial_position_type=0
+window/size/resizable=false
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [gui]
 
@@ -74,3 +76,4 @@ rewind={
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

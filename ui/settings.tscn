@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxruob6hcgito"]
+
+[ext_resource type="Script" path="res://ui/settings.gd" id="1_n6y7u"]
+[ext_resource type="Texture2D" uid="uid://dc8uya2rf20ff" path="res://assets/backgrounds/yellow.png" id="2_03y18"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n6y7u")
+metadata/_edit_vertical_guides_ = [320.0]
+metadata/_edit_horizontal_guides_ = [180.0]
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+texture = ExtResource("2_03y18")
+stretch_mode = 1
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 1
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 104.0
+offset_bottom = 44.0
+text = "MAIN MENU"
+
+[node name="Resolution" type="Label" parent="."]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 64.0
+offset_right = 276.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "RESOLUTION"
+
+[node name="ItemList" type="ItemList" parent="Resolution"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.647
+anchor_top = -4.0
+anchor_right = 1.647
+anchor_bottom = -4.0
+offset_left = -111.996
+offset_top = 80.0
+offset_right = 112.004
+offset_bottom = 128.0
+allow_search = false
+item_count = 4
+max_columns = 2
+same_column_width = true
+fixed_column_width = 100
+item_0/text = "640x360"
+item_1/text = "1280x720"
+item_2/text = "1920x1080"
+item_3/text = "2560x1440"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="item_selected" from="Resolution/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="tree_exiting" from="Resolution/ItemList" to="." method="_on_item_list_tree_exiting"]

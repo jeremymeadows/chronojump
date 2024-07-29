@@ -1,7 +1,9 @@
 extends AnimatableBody2D
 
+
 var path := []
 var frame := 0
+
 
 func _physics_process(_delta: float) -> void:
 	if not Global.running:
@@ -18,6 +20,7 @@ func _physics_process(_delta: float) -> void:
 		)
 		stop()
 
+
 func replay():
 	frame = 0
 	self.position = path[frame]
@@ -25,6 +28,7 @@ func replay():
 	$CollisionShape2D.disabled = false
 	$Sprite2D/AnimationPlayer.stop()
 	set_physics_process(true)
-#
+
+
 func stop():
 	set_physics_process(false)

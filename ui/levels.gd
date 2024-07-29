@@ -6,7 +6,7 @@ func _ready() -> void:
 		var new = $Level.duplicate()
 		new.position.y += i * 64
 		new.text = "Level %d" % i
-		new.get_child(0).text = "%.03fs" % Global.records[i]
+		new.get_child(0).text = "%.03fs" % Global.records.get(i, INF)
 		new.connect("pressed", func(): select_level(i))
 		add_child(new)
 	$Level.queue_free()

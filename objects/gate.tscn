@@ -1,13 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://1v6yx87pixur"]
+[gd_scene load_steps=3 format=3 uid="uid://1v6yx87pixur"]
 
-[ext_resource type="TileSet" uid="uid://ptnlqihwreds" path="res://tiles.tres" id="1_3ccec"]
+[ext_resource type="Texture2D" uid="uid://dnnkw8us0sawc" path="res://assets/gate.png" id="1_g4kwa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1a4yu"]
+size = Vector2(16, 48)
 
 [node name="Gate" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
+position = Vector2(8, -24)
+texture = ExtResource("1_g4kwa")
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource("1_3ccec")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 1, 2, -131072, 1, 1, -196608, 1, 1, -262144, 1, 1, -327680, 1, 0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, -24)
+shape = SubResource("RectangleShape2D_1a4yu")

@@ -1,8 +1,7 @@
 extends Node2D
 
 
-@export
-var clone: PackedScene
+var clone := load("res://objects/clone.tscn")
 var new_clone
 
 var start_pos = Vector2(0, 0)
@@ -20,10 +19,10 @@ func _on_player_freeze() -> void:
 
 
 func _on_player_rewind() -> void:
-	start_pos.x -= 96 + 16
+	start_pos.x -= 32 + 16
 	$Boundary.position.x = start_pos.x - 16;
 	$Player.position = start_pos
-	$Player/Camera2D.limit_left -= 96 + 16
+	$Player/Camera2D.limit_left -= 32 + 16
 	
 	add_child(new_clone)
 	get_tree().call_group("clones", "replay")

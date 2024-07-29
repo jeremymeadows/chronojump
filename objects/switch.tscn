@@ -29,6 +29,8 @@ animations = [{
 size = Vector2(12, 2)
 
 [node name="PressureButton" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_ll7lt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

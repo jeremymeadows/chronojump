@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+
 signal freeze
 signal rewind
 
@@ -7,6 +8,7 @@ const SPEED := 160.0
 const JUMP_VELOCITY := -448.0
 static var GRAVITY: int = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+var jumping = false
 var path := []
 var frozen := false
 
@@ -25,10 +27,13 @@ func _physics_process(delta: float) -> void:
 		
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
+	else:
+		jumping = false
 	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		jumping = true
 		velocity.y = JUMP_VELOCITY
-	if Input.is_action_just_released("jump"):
+	if jumping and Input.is_action_just_released("jump"):
 		velocity.y += GRAVITY * delta * 16
 	
 	velocity.x = Input.get_axis('move_left', 'move_right') * SPEED

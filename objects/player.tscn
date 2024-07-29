@@ -87,7 +87,7 @@ position = Vector2(16, -13.5)
 shape = SubResource("RectangleShape2D_ypmxj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(32, -27)
+position = Vector2(16, -13)
 limit_left = -96
 limit_bottom = 96
 position_smoothing_enabled = true

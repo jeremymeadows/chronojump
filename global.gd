@@ -1,6 +1,12 @@
 extends Node
 
 
+const RESOLUTIONS := [
+	Vector2i(640, 360),
+	Vector2i(1280, 720),
+	Vector2i(1920, 1080),
+	Vector2i(2560, 1440),
+]
 const MAX_LEVEL := 3
 
 var running := false
@@ -12,7 +18,6 @@ var window := {}
 
 
 func _ready() -> void:
-	get_window().size = Vector2i(1920, 1080)
 	load_game()
 
 
@@ -25,7 +30,7 @@ func save_game() -> void:
 	var file := FileAccess.open("user://game.save", FileAccess.WRITE)
 	file.store_var({
 		"position": get_window().position,
-		"size": get_window().size,
+		"size": RESOLUTIONS.find(get_window().size),
 		"scores": scores,
 		"records": records,
 	})
@@ -36,12 +41,18 @@ func load_game():
 	var file := FileAccess.open("user://game.save", FileAccess.READ)
 	if file:
 		var data = file.get_var(true)
-		get_window().size = data.get("size", Vector2i(640, 360))
+		get_window().size = RESOLUTIONS[data.get("size", 1)]
 		get_window().position = data.get("position", Vector2i(0, 0))
 		
 		scores = data.get("scores", {})
 		records = data.get("records", {})
-	file.close()
+		file.close()
+	else:
+		var res = DisplayServer.screen_get_size() / DisplayServer.screen_get_scale()
+		var i = 1
+		while i < len(RESOLUTIONS) && RESOLUTIONS[i].x < res.x:
+			i += 1
+		get_window().size = RESOLUTIONS[i - 1]
 
 
 func quit():

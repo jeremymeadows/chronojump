@@ -58,6 +58,14 @@ offset_right = 104.0
 offset_bottom = 44.0
 text = "LEVELS"
 
+[node name="Settings" type="Button" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 104.0
+offset_bottom = 84.0
+text = "SETTINGS"
+
 [node name="Quit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 2
@@ -70,8 +78,26 @@ offset_bottom = -8.0
 grow_vertical = 0
 text = "QUIT"
 
-[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]
+[node name="Copyright" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -122.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.392157, 0, 0.862745, 1)
+text = "© Jeremy Meadows"
+flat = true
+
 [connection signal="tree_exited" from="Title" to="." method="_on_title_tree_exited"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
+[connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Copyright" to="." method="_on_copyright_pressed"]
