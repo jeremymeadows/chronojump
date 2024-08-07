@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 32 32"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="pixel_template.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#e5e5e5"
+     bordercolor="#525252"
+     borderopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:document-units="px"
+     showgrid="true"
+     units="px"
+     width="32px"
+     inkscape:showpageshadow="true"
+     borderlayer="true"
+     guidetolerance="20"
+     inkscape:zoom="28.193463"
+     inkscape:cx="10.445684"
+     inkscape:cy="18.071565"
+     inkscape:window-width="2248"
+     inkscape:window-height="1400"
+     inkscape:window-x="4"
+     inkscape:window-y="36"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid824"
+       enabled="true"
+       empspacing="4" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid826"
+       enabled="true"
+       empspacing="2"
+       spacingx="4"
+       spacingy="4"
+       empcolor="#ff3f44"
+       empopacity="0.30588235" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid828"
+       enabled="false"
+       spacingx="16"
+       spacingy="16"
+       empcolor="#3f3fff"
+       empopacity="0.22352941" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid830"
+       enabled="false"
+       spacingx="32"
+       spacingy="32" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="background"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke-linejoin:round"
+       id="rect934"
+       width="1"
+       height="1"
+       x="0"
+       y="0" />
+  </g>
+</svg>

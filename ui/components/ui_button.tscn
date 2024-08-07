@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://2kcdaud01ee4"]
+
+[ext_resource type="Texture2D" uid="uid://bovucemrsayll" path="res://assets/ui/button_default.tres" id="1_c7ddm"]
+[ext_resource type="Texture2D" uid="uid://1m2in2pn1x2k" path="res://assets/ui/button_pressed.tres" id="2_o6t1m"]
+[ext_resource type="Script" path="res://ui/components/ui_button.gd" id="3_j3rnh"]
+
+[node name="UIButton" type="TextureButton"]
+offset_right = 96.0
+offset_bottom = 36.0
+texture_normal = ExtResource("1_c7ddm")
+texture_pressed = ExtResource("2_o6t1m")
+texture_hover = ExtResource("2_o6t1m")
+script = ExtResource("3_j3rnh")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true

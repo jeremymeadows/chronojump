@@ -7,7 +7,7 @@ const RESOLUTIONS := [
 	Vector2i(1920, 1080),
 	Vector2i(2560, 1440),
 ]
-const MAX_LEVEL := 3
+const MAX_LEVEL := 4
 
 var running := false
 var time := 0.0

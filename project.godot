@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="time_platformer"
+config/name="chrono_jump"
 run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -24,9 +24,13 @@ Global="*res://global.tscn"
 window/size/viewport_width=640
 window/size/viewport_height=360
 window/size/initial_position_type=0
-window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/scale_mode="integer"
+
+[file_customization]
+
+folder_colors={
+"res://build/": "gray"
+}
 
 [gui]
 

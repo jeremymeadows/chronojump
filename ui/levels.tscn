@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1rk243d8tld4"]
+[gd_scene load_steps=4 format=3 uid="uid://1rk243d8tld4"]
 
 [ext_resource type="Script" path="res://ui/levels.gd" id="1_a3xnq"]
 [ext_resource type="Texture2D" uid="uid://cc4incp1lm1no" path="res://assets/backgrounds/green.png" id="2_iptn1"]
+[ext_resource type="PackedScene" uid="uid://2kcdaud01ee4" path="res://ui/components/ui_button.tscn" id="3_be7o1"]
 
 [node name="Levels" type="Control"]
 layout_mode = 3
@@ -21,25 +22,31 @@ offset_bottom = 360.0
 texture = ExtResource("2_iptn1")
 stretch_mode = 1
 
-[node name="Menu" type="Button" parent="."]
-layout_mode = 1
+[node name="Menu" parent="." instance=ExtResource("3_be7o1")]
+self_modulate = Color(0.517647, 0.0196078, 1, 1)
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 104.0
 offset_bottom = 44.0
 text = "MAIN MENU"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0.517647, 0.0196078, 1, 1)
 
-[node name="Level" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -170.0
+[node name="Level" parent="." instance=ExtResource("3_be7o1")]
+self_modulate = Color(0, 0.673214, 0.213409, 1)
+layout_mode = 0
+offset_left = 150.0
 offset_top = 80.0
-offset_right = -74.0
+offset_right = 246.0
 offset_bottom = 116.0
-grow_horizontal = 2
-text = "LEVEL 1"
+text = "LEVEL 0"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0, 0.673214, 0.213409, 1)
+
+[node name="Label" parent="Level" index="0"]
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "LEVEL 0"
 
 [node name="Record" type="Label" parent="Level"]
 layout_mode = 0
@@ -50,3 +57,5 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "10.000s"
 
 [connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+
+[editable path="Level"]

@@ -48,6 +48,7 @@ _data = {
 size = Vector2(28, 28)
 
 [node name="Clone" type="AnimatableBody2D" groups=["clones"]]
+z_index = 1
 collision_layer = 3
 script = ExtResource("1_8gtm2")
 

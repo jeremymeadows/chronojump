@@ -14,7 +14,7 @@ func _ready() -> void:
 		$Record.text = "Your best is %.03fs" % record
 	
 	if Global.level == Global.MAX_LEVEL:
-		$Next.queue_free()
+		$Next.text = "LEVEL SELECT"
 	
 	Global.scores[Global.level] = time
 	Global.save_game()
@@ -24,7 +24,10 @@ func _ready() -> void:
 
 
 func _on_next_pressed() -> void:
-	Global.level += 1
+	if Global.level < Global.MAX_LEVEL:
+		Global.level += 1
+	else:
+		get_tree().change_scene_to_file("res://ui/levels.tscn")
 
 
 func _on_replay_pressed() -> void:

@@ -13,7 +13,7 @@ func _process(_delta: float) -> void:
 func _on_pause_toggled(toggled_on: bool) -> void:
 	get_tree().paused = toggled_on
 	$PauseOverlay.visible = toggled_on
-	$Pause.text = ">>" if toggled_on else "||"
+	$Pause/Label.text = ">>" if toggled_on else "||"
 
 
 func _on_restart_pressed() -> void:

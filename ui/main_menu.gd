@@ -20,7 +20,3 @@ func _on_settings_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	Global.quit()
-
-
-func _on_copyright_pressed() -> void:
-	OS.shell_open("https://jeremymeadows.dev/")

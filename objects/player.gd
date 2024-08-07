@@ -14,7 +14,7 @@ var frozen := false
 
 
 func _process(_delta: float) -> void:
-	if velocity.y == 0:
+	if is_on_floor():
 		$Animation.animation = "idle" if velocity.x == 0 else "move"
 	else:
 		$Animation.animation = "fall" if velocity.x == 0 else "fallmove"

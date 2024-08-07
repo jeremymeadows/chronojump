@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnrxitnkh0kqm"]
+[gd_scene load_steps=4 format=3 uid="uid://cnrxitnkh0kqm"]
 
 [ext_resource type="Script" path="res://ui/main_menu.gd" id="1_a2iem"]
 [ext_resource type="Texture2D" uid="uid://cdrnwjamutuh6" path="res://assets/backgrounds/brown.png" id="2_jp30h"]
+[ext_resource type="PackedScene" uid="uid://2kcdaud01ee4" path="res://ui/components/ui_button.tscn" id="3_73bhh"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -32,10 +33,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 48
-text = "Game Name Go Here"
+text = "Chrono Jump"
 horizontal_alignment = 1
 
-[node name="Start" type="Button" parent="."]
+[node name="Start" parent="." instance=ExtResource("3_73bhh")]
+self_modulate = Color(0, 0.673214, 0.213409, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -48,25 +50,34 @@ offset_right = 48.0
 offset_bottom = 48.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "START!"
+text = "START"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0, 0.673214, 0.213409, 1)
 
-[node name="Levels" type="Button" parent="."]
+[node name="Levels" parent="." instance=ExtResource("3_73bhh")]
+self_modulate = Color(0.517647, 0.0196078, 1, 1)
 layout_mode = 1
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 104.0
 offset_bottom = 44.0
 text = "LEVELS"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0.517647, 0.0196078, 1, 1)
 
-[node name="Settings" type="Button" parent="."]
-layout_mode = 0
+[node name="Settings" parent="." instance=ExtResource("3_73bhh")]
+self_modulate = Color(0.517647, 0.0196078, 1, 1)
+layout_mode = 1
 offset_left = 8.0
 offset_top = 48.0
 offset_right = 104.0
 offset_bottom = 84.0
 text = "SETTINGS"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0.517647, 0.0196078, 1, 1)
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" parent="." instance=ExtResource("3_73bhh")]
+self_modulate = Color(1, 0, 0.211765, 1)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -77,27 +88,30 @@ offset_right = 104.0
 offset_bottom = -8.0
 grow_vertical = 0
 text = "QUIT"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(1, 0, 0.211765, 1)
 
-[node name="Copyright" type="Button" parent="."]
+[node name="Copyright" type="LinkButton" parent="."]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -122.0
-offset_top = -24.0
+offset_left = -116.0
+offset_top = -18.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 0
 grow_vertical = 0
-focus_mode = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.392157, 0, 0.862745, 1)
 text = "© Jeremy Meadows"
-flat = true
+underline = 1
+uri = "https://jeremymeadows.dev/"
 
 [connection signal="tree_exited" from="Title" to="." method="_on_title_tree_exited"]
 [connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Copyright" to="." method="_on_copyright_pressed"]

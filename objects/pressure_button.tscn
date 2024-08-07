@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://81ars1sr5b5j"]
 
 [ext_resource type="Texture2D" uid="uid://ea6ri0xrqgng" path="res://assets/button.png" id="1_fen0d"]
-[ext_resource type="Script" path="res://objects/switch.gd" id="1_ll7lt"]
+[ext_resource type="Script" path="res://objects/pressure_button.gd" id="1_ll7lt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ck5in"]
 atlas = ExtResource("1_fen0d")
 region = Rect2(0, 0, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5j3ew"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_6aah8"]
 atlas = ExtResource("1_fen0d")
 region = Rect2(0, 16, 16, 16)
 
@@ -16,19 +16,25 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ck5in")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5j3ew")
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6aah8")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkn1t"]
 size = Vector2(12, 2)
 
 [node name="PressureButton" type="Area2D"]
+z_index = 3
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_ll7lt")

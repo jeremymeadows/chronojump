@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxruob6hcgito"]
+[gd_scene load_steps=4 format=3 uid="uid://cxruob6hcgito"]
 
 [ext_resource type="Script" path="res://ui/settings.gd" id="1_n6y7u"]
 [ext_resource type="Texture2D" uid="uid://dc8uya2rf20ff" path="res://assets/backgrounds/yellow.png" id="2_03y18"]
+[ext_resource type="PackedScene" uid="uid://2kcdaud01ee4" path="res://ui/components/ui_button.tscn" id="3_6guce"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -21,13 +22,16 @@ offset_bottom = 360.0
 texture = ExtResource("2_03y18")
 stretch_mode = 1
 
-[node name="Menu" type="Button" parent="."]
-layout_mode = 1
+[node name="Menu" parent="." instance=ExtResource("3_6guce")]
+self_modulate = Color(0.517647, 0.0196078, 1, 1)
+layout_mode = 0
 offset_left = 8.0
 offset_top = 8.0
 offset_right = 104.0
 offset_bottom = 44.0
-text = "MAIN MENU"
+text = "MAIN_MENU"
+text_color = Color(1, 1, 1, 1)
+background_color = Color(0.517647, 0.0196078, 1, 1)
 
 [node name="Resolution" type="Label" parent="."]
 layout_mode = 0
